@@ -17,16 +17,16 @@ Node *reverse(Node *head, int k)
     Node *current = head;
     Node *next = NULL;
     Node *prev = NULL;
-    int count = 0;
+    int cnt = 0;
 
     /*reverse first k nodes of the linked list */
-    while (current != NULL && count < k)
+    while (current != NULL && cnt < k)
     {
         next = current->next;
         current->next = prev;
         prev = current;
         current = next;
-        count++;
+        cnt++;
     }
 
     if (next != NULL)
@@ -45,7 +45,7 @@ void push(Node **head_ref, int new_data)
 }
 
 /* Function to print linked list */
-void printList(Node *node)
+void print(Node *node)
 {
     while (node != NULL)
     {
@@ -73,7 +73,7 @@ int main()
     push(&head, 1);
 
     cout << "Given linked list \n";
-    printList(head);
+    print(head);
     head = reverse(head, 4);
 
     cout << "\nReversed Linked list \n";
